@@ -10,7 +10,7 @@ class Graph {
   }
 
   addPoint(point) {
-    this.points.push(p);
+    this.points.push(point);
   }
 
   containsPoint(point) {
@@ -42,7 +42,7 @@ class Graph {
   }
 
   tryAddSegment(seg) {
-    if (!this.containsSegment()) {
+    if (!this.containsSegment(seg)) {
       this.addSegment(seg);
       return true;
     }

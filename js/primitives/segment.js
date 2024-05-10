@@ -21,12 +21,14 @@ class Segment {
    * @param {int} width width of the line
    * @param {string | CanvasGradient | CanvasPattern} color color of the line
    */
-  draw(ctx, width = 2, color = "black") {
+  draw(ctx, { width = 2, color = "black", dash = [] } = {}) {
     ctx.beginPath();
     ctx.lineWidth = width;
     ctx.strokeStyle = color;
+    ctx.setLineDash(dash);
     ctx.moveTo(this.p1.x, this.p1.y);
     ctx.lineTo(this.p2.x, this.p2.y);
     ctx.stroke();
+    ctx.setLineDash([]);
   }
 }
