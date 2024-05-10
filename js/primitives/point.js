@@ -9,6 +9,15 @@ class Point {
     this.y = y;
   }
   /**
+   * Checks if a point is identical (same x,y) to this
+   * @param {Point} point compares with `this`
+   * @returns true if points are the same
+   */
+  equals(point) {
+    return this.x == point.x && this.y == point.y;
+  }
+
+  /**
    * Draws a circle at `this.x` and `this.y` cords on ctx using specified size and color
    * @param {CanvasRenderingContext2D} ctx the context to draw on
    * @param {int} size the diameter of the circle
